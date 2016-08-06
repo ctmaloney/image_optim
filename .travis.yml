@@ -18,12 +18,13 @@ script: |
     set -ex
     if [ -n "$RUBOCOP" ]; then
       bundle exec rubocop
-    elif [ -n "$RAILS_VERSION" ] && [ -z "$CODECLIMATE" ]; then
-      bundle exec image_optim --info
-      bundle exec rspec spec/image_optim/railtie_spec.rb
     else
       bundle exec image_optim --info
-      bundle exec rspec
+      if [ -n "$RAILS_VERSION" ] && [ -z "$CODECLIMATE" ]; then
+        bundle exec rspec spec/image_optim/railtie_spec.rb
+      else
+        bundle exec rspec
+      fi
     fi
   )
 before_install: |
