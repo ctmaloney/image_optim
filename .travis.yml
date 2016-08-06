@@ -49,6 +49,10 @@ matrix:
       rvm: '2'
     - env: RAILS_VERSION='~> 4.0' CODECLIMATE=1
       rvm: '2'
+    - env: RAILS_VERSION='~> 5.0' SPROCKETS_RAILS_VERSION='~> 2.0'
+      rvm: '2.2.2'
+    - env: RAILS_VERSION='~> 5.0'
+      rvm: '2.2.2'
     - env: RUBOCOP=true
       rvm: '2'
   allow_failures:
