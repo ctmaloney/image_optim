@@ -47,6 +47,7 @@ class ImageOptim
         src.copy(dst)
         args = %W[
           --quiet
+          --all-progressive
           --
           #{dst}
         ]
